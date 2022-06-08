@@ -38,6 +38,10 @@ public class CookieClickerTest {
 
     for (int i = 0; i < 100000; i++){
       driver.findElement( By.id( "bigCookie" ) ).click();
+      driver.findElement( By.id( "bigCookie" ) ).click();
+      driver.findElement( By.id( "bigCookie" ) ).click();
+      driver.findElement( By.id( "bigCookie" ) ).click();
+      driver.findElement( By.id( "bigCookie" ) ).click();
     }
   }
 }
