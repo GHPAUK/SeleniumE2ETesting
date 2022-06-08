@@ -5,18 +5,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import seleniumTesting.clothesSite.pages.DressesCategoryPage;
 import seleniumTesting.clothesSite.pages.HomePage;
 import seleniumTesting.clothesSite.pages.ShoppingCartSummaryPage;
 import seleniumTesting.clothesSite.pages.SummerDressesProductsPage;
-
 import java.time.Duration;
-
-import static org.awaitility.Awaitility.await;
 
 public class ClothesSiteTest {
   WebDriver driver;
@@ -49,7 +44,7 @@ public class ClothesSiteTest {
     dressesCategoryPage.navigateToSummerDressesProductsPage();
 
     SummerDressesProductsPage summerDressesProductsPage = new SummerDressesProductsPage( driver );
-//    Thread.sleep(5000);
+
     summerDressesProductsPage.pressProductCard( 1 );
 
     summerDressesProductsPage.viewThumbnails();

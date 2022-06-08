@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -27,16 +26,13 @@ public class SummerDressesProductsPage {
   }
 
   public void pressProductCard( int index ) {
-    WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds( 10 ) );
-    wait.until( ExpectedConditions.elementToBeClickable( driver.findElements( By.className( "product-image-container" ) ).get( index ) ) );
+    await().atMost( 20, TimeUnit.SECONDS )
+            .with()
+            .pollInterval( 250, TimeUnit.MILLISECONDS )
+            .pollDelay( 500, TimeUnit.MILLISECONDS )
+            .until( () ->  driver.findElement( By.className( "product_list" ) ).findElements( By.className( "product-container" ) ).get( index ).isDisplayed() );
 
-//    await().atMost( 20, TimeUnit.SECONDS )
-//            .with()
-//            .pollInterval( 250, TimeUnit.MILLISECONDS )
-//            .pollDelay( 500, TimeUnit.MILLISECONDS )
-//            .until( () -> driver.findElements( By.className( "product-image-container" ) ).get( index ).isDisplayed() );
-
-    driver.findElements( By.className( "product_img_link" ) ).get( index ).click();
+    driver.findElement( By.className( "product_list" ) ).findElements( By.className( "product-container" ) ).get( index ).click();
 
   }
 
