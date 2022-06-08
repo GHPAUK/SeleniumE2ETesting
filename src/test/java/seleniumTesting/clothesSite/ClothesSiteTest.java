@@ -7,10 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import seleniumTesting.clothesSite.pages.DressesCategoryPage;
-import seleniumTesting.clothesSite.pages.HomePage;
-import seleniumTesting.clothesSite.pages.ShoppingCartSummaryPage;
-import seleniumTesting.clothesSite.pages.SummerDressesProductsPage;
+import seleniumTesting.clothesSite.pages.*;
+
 import java.time.Duration;
 
 public class ClothesSiteTest {
@@ -35,7 +33,7 @@ public class ClothesSiteTest {
   }
 
   @Test
-  void navigateToCasualDressesAndAddOneToBasketSignIn() throws InterruptedException {
+  void navigateToCasualDressesAndAddOneToBasketSignIn() {
     HomePage homeP = new HomePage( driver );
     homeP.navigateToSiteHomePage( "http://automationpractice.com/index.php" );
     homeP.navigateToDressesCategoriesPage();
@@ -56,9 +54,26 @@ public class ClothesSiteTest {
 
     ShoppingCartSummaryPage shoppingCartSummaryPage = new ShoppingCartSummaryPage( driver );
     shoppingCartSummaryPage.summaryProceedToCheckoutButton();
-    shoppingCartSummaryPage.signInPageSignIn();
+
+    AuthenticationPage authenticationPage = new AuthenticationPage( driver );
+    authenticationPage.signInPageFillDetailsAndLogIn();
+
     shoppingCartSummaryPage.addressProceedToCheckout();
     shoppingCartSummaryPage.shippingAcceptToSAndProceedToCheckout();
     shoppingCartSummaryPage.paymentPayByCard();
+  }
+
+  @Test
+  void loginNavToMyAccountAndChangePassword() {
+    HomePage homeP = new HomePage( driver );
+    homeP.navigateToSiteHomePage( "http://automationpractice.com/index.php" );
+    homeP.navigateToAuthenticationSignInPage();
+
+    AuthenticationPage authenticationPage = new AuthenticationPage( driver );
+    authenticationPage.signInPageFillDetailsAndLogIn();
+
+    MyAccountPage myAccountPage = new MyAccountPage( driver );
+    myAccountPage.navigateToMyPersonalDetailsPage();
+    myAccountPage.changePasswordAndSubmit();
   }
 }

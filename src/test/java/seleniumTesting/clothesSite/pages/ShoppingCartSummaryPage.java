@@ -28,20 +28,6 @@ public class ShoppingCartSummaryPage {
             .findElement( By.className( "button" ) ).click();
   }
 
-  public void signInPageSignIn() {
-    await().atMost( 20, TimeUnit.SECONDS )
-            .with()
-            .pollInterval( 250, TimeUnit.MILLISECONDS )
-            .pollDelay( 500, TimeUnit.MILLISECONDS )
-            .until( () -> driver.findElement( By.id( "email" ) ).isDisplayed() );
-
-    driver.findElement( By.id( "email" ) ).sendKeys( "testingTesting123@test.com" );
-
-    driver.findElement( By.id( "passwd" ) ).sendKeys( "SuperSafe1" );
-
-    driver.findElement( By.id( "SubmitLogin" ) ).click();
-  }
-
   public void addressProceedToCheckout() {
     await().atMost( 20, TimeUnit.SECONDS )
             .with()
@@ -54,7 +40,7 @@ public class ShoppingCartSummaryPage {
 
   public void shippingAcceptToSAndProceedToCheckout() {
     WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds( 10 ) );
-    wait.until( ExpectedConditions.elementToBeClickable( driver.findElement( By.id( "cgv" ) ) ) );
+    wait.until( ExpectedConditions.elementToBeClickable( driver.findElement( By.className( "cart_navigation" ) ).findElement( By.className( "button" ) ) ) );
     driver.findElement( By.id( "cgv" ) ).click();
     driver.findElement( By.className( "cart_navigation" ) ).findElement( By.className( "button" ) ).click();  }
 
