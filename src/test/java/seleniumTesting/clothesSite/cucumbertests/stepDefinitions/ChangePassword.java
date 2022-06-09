@@ -1,4 +1,4 @@
-package seleniumTesting.clothesSite.cucumbertests;
+package seleniumTesting.clothesSite.cucumbertests.stepDefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -16,7 +16,7 @@ import java.time.Duration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class MyStepdefs {
+public class ChangePassword {
 
   private WebDriver driver;
 
