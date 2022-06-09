@@ -3,11 +3,13 @@ seleniumTesting\clothesSite\pages\MyAccountPage.class
 seleniumTesting\clothesSite\pages\AuthenticationPage.class
 seleniumTesting\phpTravels\PHPTravelsFlights.class
 seleniumTesting\clothesSite\pages\ContactUsPage.class
+seleniumTesting\RunCucumberTest.class
 seleniumTesting\clothesSite\pages\ShoppingCartSummaryPage.class
 seleniumTesting\MyFirstSeleniumTest.class
 seleniumTesting\clothesSite\ContactCustomerSupport.class
 seleniumTesting\clothesSite\ClothesSiteTest.class
 seleniumTesting\clothesSite\pages\SummerDressesProductsPage.class
+seleniumTesting\clothesSite\cucumbertests\stepDefinitions\ClothesShopSiteBuyADressStepDefinitions.class
 seleniumTesting\clothesSite\pages\HomePage.class
 seleniumTesting\clothesSite\pages\DressesCategoryPage.class
 seleniumTesting\cookieClicker\CookieClickerTest.class
