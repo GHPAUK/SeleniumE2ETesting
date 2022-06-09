@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Test set: seleniumTesting.RunCucumberTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 4, Time elapsed: 62.271 s <<< FAILURE! - in seleniumTesting.RunCucumberTest
+Purchasing Travel Tickets.Testing  Time elapsed: 2.544 s  <<< ERROR!
+io.cucumber.junit.platform.engine.UndefinedStepException: 
+The step 'I am spaghetti' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("I am spaghetti")
+public void i_am_spaghetti() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("I find spaghetti")
+public void i_find_spaghetti() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("I eat the spaghetti")
+public void i_eat_the_spaghetti() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
