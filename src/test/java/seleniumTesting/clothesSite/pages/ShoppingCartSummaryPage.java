@@ -16,7 +16,7 @@ public class ShoppingCartSummaryPage {
     this.driver = driver;
   }
 
-  public void summaryProceedToCheckoutButton() {
+  public void summaryProceedToCheckoutBtn() {
     await().atMost( 20, TimeUnit.SECONDS )
             .with()
             .pollInterval( 250, TimeUnit.MILLISECONDS )

@@ -23,7 +23,7 @@ public class AuthenticationPage {
 
     driver.findElement( By.id( "email" ) ).sendKeys( "testingTesting123@test.com" );
 
-    driver.findElement( By.id( "passwd" ) ).sendKeys( "SuperSafe1" );
+    driver.findElement( By.id( "passwd" ) ).sendKeys( "SuperSafe3" );
 
     driver.findElement( By.id( "SubmitLogin" ) ).click();
   }

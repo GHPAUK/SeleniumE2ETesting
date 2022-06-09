@@ -11,6 +11,8 @@ import seleniumTesting.clothesSite.pages.*;
 
 import java.time.Duration;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
 public class ClothesSiteTest {
   WebDriver driver;
 
@@ -36,10 +38,13 @@ public class ClothesSiteTest {
   void navigateToCasualDressesAndAddOneToBasketSignIn() {
     HomePage homeP = new HomePage( driver );
     homeP.navigateToSiteHomePage( "http://automationpractice.com/index.php" );
+    assertThat(driver.getTitle()).isEqualTo( "My Store" );
     homeP.navigateToDressesCategoriesPage();
+    assertThat(driver.getTitle()).isEqualTo( "Dresses - My Store" );
 
     DressesCategoryPage dressesCategoryPage = new DressesCategoryPage( driver );
     dressesCategoryPage.navigateToSummerDressesProductsPage();
+    assertThat(driver.getTitle()).isEqualTo( "Summer Dresses - My Store" );
 
     SummerDressesProductsPage summerDressesProductsPage = new SummerDressesProductsPage( driver );
 
@@ -53,7 +58,7 @@ public class ClothesSiteTest {
     summerDressesProductsPage.addProductToCartAndProceedToCheckout();
 
     ShoppingCartSummaryPage shoppingCartSummaryPage = new ShoppingCartSummaryPage( driver );
-    shoppingCartSummaryPage.summaryProceedToCheckoutButton();
+    shoppingCartSummaryPage.summaryProceedToCheckoutBtn();
 
     AuthenticationPage authenticationPage = new AuthenticationPage( driver );
     authenticationPage.signInPageFillDetailsAndLogIn();

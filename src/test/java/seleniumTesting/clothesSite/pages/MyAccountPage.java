@@ -32,9 +32,9 @@ public class MyAccountPage {
             .pollDelay( 500, TimeUnit.MILLISECONDS )
             .until( () -> driver.findElement( By.id( "old_passwd" ) ).isDisplayed() );
 
-    driver.findElement( By.id( "old_passwd" ) ).sendKeys( "SuperSafe1" );
-    driver.findElement( By.id( "passwd" ) ).sendKeys( "SuperSafe2" );
-    driver.findElement( By.id( "confirmation" ) ).sendKeys( "SuperSafe2" );
+    driver.findElement( By.id( "old_passwd" ) ).sendKeys( "SuperSafe2" );
+    driver.findElement( By.id( "passwd" ) ).sendKeys( "SuperSafe3" );
+    driver.findElement( By.id( "confirmation" ) ).sendKeys( "SuperSafe3" );
 
     driver.findElement( By.cssSelector( "button.btn:nth-child(1)" ) ).click();
   }
